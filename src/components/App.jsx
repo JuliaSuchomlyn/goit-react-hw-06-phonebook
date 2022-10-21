@@ -1,15 +1,21 @@
-import {useState, useEffect} from 'react';
+// import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 // import { nanoid } from "nanoid";
 import { Form } from './Form/Form';
 import { ContactsList } from "./ContactsList/ContactsList"
 import { Filter } from './Filter/Filter';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
-import { addContact, removeContact, setFilter } from 'redux/actions';
+// import { getContacts, getFilter } from 'redux/filter/filter-selectors';
+import { getContacts } from 'redux/contacts/contacts-selector';
+import { getFilter } from 'redux/filter/filter-selectors';
+import { addContact, removeContact } from 'redux/contacts/contacts-actions';
+import { setFilter } from 'redux/filter/filter-actions';
+// import { addContact, removeContact, setFilter } from 'redux/filter/filter-actions';
 
 export const App = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
+
   const dispatch = useDispatch();
     // const [contacts, setContacts] = useState(() => {
     //     return (
